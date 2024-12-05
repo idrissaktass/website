@@ -46,7 +46,7 @@ const Home = () => {
     };
 
   return (
-    <Box display={"flex"} flexDirection={"column"} alignItems={"center"} sx={{minHeight: '100vh', background: 'linear-gradient(to top right, rgb(0 0 0), rgb(35 35 35))'}}>
+    <Box display={"flex"} flexDirection={"column"} alignItems={"center"} sx={{scrollBehavior:"smooth",minHeight: '100vh', background: 'linear-gradient(to top right, rgb(0 0 0), rgb(35 35 35))'}}>
         <Box 
             sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
                 display: 'flex',
