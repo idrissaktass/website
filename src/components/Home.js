@@ -239,7 +239,19 @@ const Home = () => {
                 </Typography>
             </Grid>
             <Grid container justifyContent={"space-between"} mb={6}>
-                <Grid size={{xs:12, md:5.5}}>
+            <Grid 
+                item 
+                size={{xs:12, md:5.5}}
+                mt={{ xs: "20px", md: "0px" }} 
+                onClick={() => window.location.href = 'https://www.lostandfoundtr.online/'}
+                sx={{
+                    cursor: "pointer", // Indicates clickable area
+                    "&:hover": {
+                    transform: "scale(1.01)", // Optional: Add hover effect for better UI
+                    transition: "transform 0.2s ease",
+                    },
+                }}
+                >
                     <Typography fontSize={{xs:"20px", md:"20px", lg:"24px"}} fontFamily={"Hagrid"} color="white">
                         Lost and Found App
                     </Typography>
@@ -279,7 +291,19 @@ const Home = () => {
                         </Grid>
 
                 </Grid>
-                <Grid size={{xs:12, md:5.5}} mt={{xs:"20px", md:"0px"}}>
+                <Grid 
+                    item 
+                    size={{xs:12, md:5.5}}
+                    mt={{ xs: "20px", md: "0px" }} 
+                    onClick={() => window.location.href = 'https://movie-app-x.vercel.app/'}
+                    sx={{
+                        cursor: "pointer", // Indicates clickable area
+                        "&:hover": {
+                        transform: "scale(1.01)", // Optional: Add hover effect for better UI
+                        transition: "transform 0.2s ease",
+                        },
+                    }}
+                    >
                     <Typography fontSize={{xs:"20px", md:"20px", lg:"24px"}} fontFamily={"Hagrid"} color="white">
                         Movie App
                     </Typography>
