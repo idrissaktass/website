@@ -228,14 +228,16 @@ const Home = () => {
         <Grid container gap={3} textAlign={"start"}
             ref={(el) => sectionRefs.current[3] = el}    
             sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
-                height: "100vh",
+                minHeight: "100vh",
                 ...sectionStyle,
                 ...(visibleSections[3] ? visibleStyle : {}),
             }} 
             >
-            <Typography fontSize={{xs:"24px", md:"28px", lg:"32px"}} fontFamily={"Hagrid"} color="#BFD49E">
-                My Practices
-            </Typography>
+            <Grid size={{xs:12}}>
+                <Typography fontSize={{xs:"24px", md:"28px", lg:"32px"}} fontFamily={"Hagrid"} color="#BFD49E">
+                    My Practices
+                </Typography>
+            </Grid>
             <Grid container justifyContent={"space-between"} mb={6}>
                 <Grid size={{xs:12, md:5.5}}>
                     <Typography fontSize={{xs:"20px", md:"20px", lg:"24px"}} fontFamily={"Hagrid"} color="white">
@@ -318,7 +320,7 @@ const Home = () => {
                         </Grid>
                 </Grid>
             </Grid>
-            <Grid container size={{xs:12}} justifyContent={'center'}>
+            <Grid container size={{xs:12}} justifyContent={'center'} mb={2}>
                 <Typography  textAlign={'center'} color='white' fontFamily={"Hagrid"} fontSize={{xs:"20px", md:"20px", lg:"24px"}} fontStyle={"italic"}>
                     Growth is the journey itself; I am not perfect, but I am always striving for better.
                 </Typography>
