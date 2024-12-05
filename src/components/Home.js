@@ -79,7 +79,7 @@ const Home = () => {
                             and I'm a Frontend Developer.
                         </Typography>
                     </Grid>
-                <Grid display={'flex'} alignItems={'center'} gap={2} item xs={12} md={6}>
+                <Grid display={'flex'} flexDirection={{xs:"column", sm:"unset"}} alignItems={{xs:"start", sm:"center"}} gap={2} item xs={12} md={6}>
                     <Button onClick={() => window.location.href = 'mailto:idrissaktass98@gmail.com'}
                     sx={{ backgroundColor:"transparent", border:"2px solid white", borderRadius:"15px", padding:"10px 20px 10px 20px",
                         transition: "border-color 0.5s ease",  "&:hover":{borderColor: "#BFD49E"}
@@ -87,7 +87,7 @@ const Home = () => {
                     >
                     <Typography fontSize={{xs:"24px", md:"20px", lg:"24px"}}  color="white">Contact me</Typography>
                     </Button>
-                    <Typography  fontSize={{xs:"24px", md:"20px", lg:"24px"}} color='white'>via idrissaktass98@gmail.com</Typography>
+                    <Typography  fontSize={{xs:"20px", md:"20px", lg:"24px"}} color='white'>via idrissaktass98@gmail.com</Typography>
                 </Grid>
                 </Grid>
                 <Grid width={{xs:"100%", md:"fit-content"}} fontFamily={"Hagrid"} display={{xs:"flex", md:"unset"}} justifyContent={{xs:"end", md:"unset"}}>
@@ -141,7 +141,7 @@ const Home = () => {
                 />
                 </Grid>
         </Grid>
-        <Grid container textAlign={"start"} gap={3}
+        <Grid container textAlign={"start"} gap={3} mt={{xs:10, md:6}}
             ref={(el) => sectionRefs.current[2] = el}    
             sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
                 height: "100vh",
