@@ -119,7 +119,7 @@ const Home = () => {
                 Hi there! 👋 I'm a passionate Web Developer with a degree in Computer Engineering from Cukurova University. I specialize in React, TypeScript, and the MERN Stack, and I’m constantly improving my skills to stay ahead in the ever-evolving world of web development.
                 I enjoy creating user-friendly and visually appealing web applications, using tools like Material UI and Bootstrap to bring designs to life. From building movie suggestion apps to platforms for helping people connect with lost belongings, I love turning ideas into functional, meaningful projects       
                 and believe in continuous growth. Each project is an opportunity to learn something new, refine my skills, and push boundaries. I'm committed to becoming the best version of myself as a developer, one step at a time.<br/>
-                Thank you for visiting my website! Feel free to explore my projects and connect with me for collaboration or just a chat.   
+                Thank you for visiting my website! Feel free to explore my projects and connect with me for collaboration.   
                 </Typography>
                 </Grid>
             <Grid mt={3} size={{xs:12}}
