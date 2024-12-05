@@ -200,6 +200,7 @@ const Home = () => {
                         <Typography fontSize={{xs:"20px", md:"20px", lg:"24px"}} fontFamily={"Hagrid"} color="white" textAlign={"end"} width={"100%"}>
                             Javascript, HTML, CSS <br/>
                             React <br/>
+                            MERN Stack <br/>
                             Material UI
                         </Typography>
                     </Box>
