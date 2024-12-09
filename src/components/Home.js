@@ -295,7 +295,7 @@ const Home = () => {
                     item 
                     size={{xs:12, md:5.5}}
                     mt={{ xs: "20px", md: "0px" }} 
-                    onClick={() => window.location.href = 'https://movie-app-x.vercel.app/'}
+                    onClick={() => window.location.href = 'https://www.cinescope.online'}
                     sx={{
                         cursor: "pointer", // Indicates clickable area
                         "&:hover": {
