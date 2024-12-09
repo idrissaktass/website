@@ -141,10 +141,10 @@ const Home = () => {
                 />
                 </Grid>
         </Grid>
-        <Grid container textAlign={"start"} gap={3} pt={{xs:10, md:6}}
+        <Grid container textAlign={"start"} gap={3}
             ref={(el) => sectionRefs.current[2] = el}    
             sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
-                height: "100vh",
+                height: "120vh",
                 ...sectionStyle,
                 ...(visibleSections[2] ? visibleStyle : {}),
             }} 
