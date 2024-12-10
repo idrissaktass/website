@@ -107,7 +107,7 @@ const Home = () => {
         <Grid container gap={3} textAlign={"start"}
          ref={(el) => sectionRefs.current[1] = el}    
          sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
-             height: "100vh",
+             height: "120vh",
              ...sectionStyle,
              ...(visibleSections[1] ? visibleStyle : {}),
          }}>
@@ -229,7 +229,7 @@ const Home = () => {
         <Grid container gap={3} textAlign={"start"}
             ref={(el) => sectionRefs.current[3] = el}    
             sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
-                minHeight: "100vh",
+                minHeight: "120vh",
                 ...sectionStyle,
                 ...(visibleSections[3] ? visibleStyle : {}),
             }} 
