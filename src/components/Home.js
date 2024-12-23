@@ -14,9 +14,7 @@ const Home = () => {
           const sectionIndex = sectionRefs.current.indexOf(entry.target);
           if (entry.isIntersecting) {
             setVisibleSections(prev => ({ ...prev, [sectionIndex]: true }));
-          } else {
-            setVisibleSections(prev => ({ ...prev, [sectionIndex]: false }));
-          }
+          } 
         },
         {
           threshold: 0.5,
@@ -34,16 +32,19 @@ const Home = () => {
       };
     }, []);
   
-    const sectionStyle = {
-      opacity: 0,
-      transform: "translateY(20px)",
-      transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
-    };
-
-    const visibleStyle = {
-      opacity: 1,
-      transform: "translateY(0)",
-    };
+    const sectionStyle = (direction) => ({
+        opacity: 0,
+        transform: direction === 'left' ? 'translateX(-100px)' : 'translateX(100px)',
+        transition: 'opacity 1.3s ease-out, transform 1.3s ease-out',
+      });
+      
+      const visibleStyle = {
+        opacity: 1,
+        transform: 'translateX(0)',
+      };
+      
+      const sectionDirections = ['left', 'right', 'left', 'right']; // Bölüm yönleri
+      
 
   return (
     <Box display={"flex"} flexDirection={"column"} alignItems={"center"} sx={{scrollBehavior:"smooth",minHeight: '100vh', background: 'linear-gradient(to top right, rgb(0 0 0), rgb(35 35 35))'}}>
@@ -60,7 +61,7 @@ const Home = () => {
           maxWidth="lg"
           ref={(el) => sectionRefs.current[0] = el}  // Attach the ref here
           sx={{
-            ...sectionStyle,
+            ...sectionStyle(sectionDirections[0]),
             ...(visibleSections[0] ? visibleStyle : {}),
           }}
         >
@@ -107,8 +108,7 @@ const Home = () => {
         <Grid container gap={3} textAlign={"start"}
          ref={(el) => sectionRefs.current[1] = el}    
          sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
-             height: "120vh",
-             ...sectionStyle,
+             ...sectionStyle(sectionDirections[1]),
              ...(visibleSections[1] ? visibleStyle : {}),
          }}>
                 <Grid size={{xs:12}}>
@@ -141,11 +141,11 @@ const Home = () => {
                 />
                 </Grid>
         </Grid>
-        <Grid container textAlign={"start"} gap={3}
+        <Grid container justifyContent={"center"} alignItems={"center"} textAlign={"start"} gap={3}
             ref={(el) => sectionRefs.current[2] = el}    
             sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
-                height: "120vh",
-                ...sectionStyle,
+                height: "100vh",
+                ...sectionStyle(sectionDirections[2]),
                 ...(visibleSections[2] ? visibleStyle : {}),
             }} 
         >
@@ -164,7 +164,7 @@ const Home = () => {
                         justifyContent: 'center',
                     }}
                     >
-                    <Box 
+                    <Box
                         component="img" 
                         src="/eagle.png" 
                         sx={{
@@ -206,12 +206,13 @@ const Home = () => {
                     </Box>
                 </Grid>
                 <Grid size={{xs:12, md:4}} mt={3}
-                    height="60%" 
                     overflow="hidden" 
                     sx={{
                         display: {xs:"flex", md:'none'}, 
                         alignItems: 'center', 
                         justifyContent: 'center',
+                        position:"relative",
+                        top:"-350px",
                     }}
                     >
                     <Box 
@@ -220,17 +221,19 @@ const Home = () => {
                         sx={{
                         width: '100%', 
                         height: 'auto',
-                        filter: "brightness(1.2) contrast(0.7) saturate(1.5)"
+                        filter: "brightness(1.2) contrast(0.6) saturate(1.5)",
+                        opacity:"0.7"
                     }} 
                     />
                 </Grid>
             </Grid>
+
         </Grid>
         <Grid container gap={3} textAlign={"start"}
             ref={(el) => sectionRefs.current[3] = el}    
             sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
                 minHeight: "120vh",
-                ...sectionStyle,
+                ...sectionStyle(sectionDirections[3]),
                 ...(visibleSections[3] ? visibleStyle : {}),
             }} 
             >
