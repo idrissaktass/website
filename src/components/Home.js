@@ -43,7 +43,7 @@ const Home = () => {
         transform: 'translateX(0)',
       };
       
-      const sectionDirections = ['left', 'right', 'left', 'right']; // Bölüm yönleri
+      const sectionDirections = ['left', 'right', 'left', 'right'];
       
 
   return (
@@ -59,7 +59,7 @@ const Home = () => {
         >
         <Container
           maxWidth="lg"
-          ref={(el) => sectionRefs.current[0] = el}  // Attach the ref here
+          ref={(el) => sectionRefs.current[0] = el} 
           sx={{
             ...sectionStyle(sectionDirections[0]),
             ...(visibleSections[0] ? visibleStyle : {}),
