@@ -144,7 +144,7 @@ const Home = () => {
         <Grid container justifyContent={"center"} alignItems={"center"} textAlign={"start"} gap={3}
             ref={(el) => sectionRefs.current[2] = el}    
             sx={{ width:{xs:"95%", sm:"90%", md:"85%", lg:"80%"},
-                height: "100vh",
+                height: {xs:"85vh", md:"90vh"},
                 ...sectionStyle(sectionDirections[2]),
                 ...(visibleSections[2] ? visibleStyle : {}),
             }} 
