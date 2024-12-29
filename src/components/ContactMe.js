@@ -8,8 +8,30 @@ import { Grid } from "@mui/system";
 const ContactMe = () => {
   return (
     <Grid container bgcolor={"#fef6f5"} display={"flex"} justifyContent={"center"} p={{xs:"35px", md:"50px"}}>
-      <Grid display={"flex"} flexDirection={"column"} alignItems={"center"} size={{xs:12, sm:10, md:9, lg:7, xl:6}}>
-        <Box width={"100%"} display={"flex"} flexDirection={"column"}>
+      <Grid 
+        display={"flex"} 
+        flexDirection={"column"} 
+        alignItems={"center"} 
+        size={{xs:12, sm:10, md:9, lg:7, xl:6}}
+        sx={{ position: "relative" }}
+      >
+        <Typography
+          sx={{
+            position: "absolute",
+            top: "0%",
+            left: {xs:"49%", sm:"30%", md:"30%", lg:"20%"},
+            transform: "translate(-50%, -10%)",
+            fontSize: {xs:"70px", sm:"90px", md:"120px"},
+            fontWeight:"900",
+            color: "rgba(0, 0, 0, 0.05)",
+            zIndex: 0,
+            userSelect: "none",
+          }}
+        >
+          CONTACT
+        </Typography>
+
+        <Box width={"100%"} display={"flex"} flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }}>
           <Typography variant="H24px" textAlign={"start"} color="textPrimary">
             Let's get in touch
           </Typography>
@@ -26,6 +48,8 @@ const ContactMe = () => {
             justifyContent: "start",
             gap: "2rem",
             mb: 4,
+            position: "relative",
+            zIndex: 1,
           }}
         >
           <Box sx={{ display:"flex", alignItems:"center", gap:1 }}>
@@ -56,6 +80,8 @@ const ContactMe = () => {
             alignItems: "start",
             justifyContent:"start",
             width: "100%",
+            position: "relative",
+            zIndex: 1,
           }}
         >
           <Typography variant="H24px" mb={2} color="textPrimary">
