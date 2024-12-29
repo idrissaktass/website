@@ -1,17 +1,13 @@
 import React, { useState } from "react";
-import { Box, color, styled } from "@mui/system";
-import {
-  AppBar,
-  Button,
-  IconButton,
-  Toolbar,
-  Typography,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-} from "@mui/material";
+import { AppBar, Button, IconButton, Toolbar, Typography, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -24,8 +20,8 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#fef6f5", boxShadow: "none", paddingTop:1.5 }}>
-      <Toolbar sx={{ justifyContent: {xs:"space-between", sm:"space-around"} }}>
+    <AppBar position="static" sx={{ backgroundColor: "#fef6f5", boxShadow: "none", paddingTop: 1.5 }}>
+      <Toolbar sx={{ justifyContent: { xs: "space-between", sm: "space-around" } }}>
         <Typography
           variant="h6"
           sx={{
@@ -37,13 +33,20 @@ const Navbar = () => {
           LOGO
         </Typography>
         <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 4 }}>
-          {["Home", "About", "Portfolio", "Contact"].map((item) => (
+          {[
+            { label: "Home", id: "hero" },
+            { label: "About", id: "about" },
+            { label: "Portfolio", id: "services" },
+            { label: "Contact", id: "contact" },
+          ].map((item) => (
             <Typography
-              key={item}
+              key={item.id}
               variant="H24px"
               color="textPrimary"
+              onClick={() => scrollToSection(item.id)}
+              sx={{ cursor: "pointer" }}
             >
-              {item}
+              {item.label}
             </Typography>
           ))}
         </Box>
@@ -69,11 +72,7 @@ const Navbar = () => {
         >
           <MenuIcon sx={{ color: "#f06262" }} />
         </IconButton>
-        <Drawer
-          anchor="right"
-          open={isDrawerOpen}
-          onClose={toggleDrawer(false)}
-        >
+        <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}>
           <Box
             sx={{ width: 250 }}
             role="presentation"
@@ -81,9 +80,14 @@ const Navbar = () => {
             onKeyDown={toggleDrawer(false)}
           >
             <List>
-              {["Home", "About", "Portfolio", "Contact"].map((text) => (
-                <ListItem button key={text}>
-                  <ListItemText primary={text} />
+              {[
+                { label: "Home", id: "hero" },
+                { label: "About", id: "about" },
+                { label: "Portfolio", id: "services" },
+                { label: "Contact", id: "contact" },
+              ].map((item) => (
+                <ListItem button key={item.id} onClick={() => scrollToSection(item.id)}>
+                  <ListItemText primary={item.label} />
                 </ListItem>
               ))}
             </List>
