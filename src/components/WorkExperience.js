@@ -38,7 +38,38 @@ const WorkExperience = () => {
       <Typography variant="body1" align="center" color="textSecondary" mb={2}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </Typography>
-      <Grid mb={6} sx={{backgroundColor: "#f06262", width:"120px", height:"2px", justifySelf:"center"}}></Grid>
+      <Grid justifySelf={"center"} mb={6}
+          sx={{
+              backgroundColor: "#f06262",
+              width: "120px",
+              height: "2px",
+              position: "relative",
+              overflow: "hidden",
+              "::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: "-120px",
+              width: "120px",
+              height: "2px",
+              background: "linear-gradient(to right, transparent, #fff, transparent)",
+              animation: "moveLight 2.5s infinite",
+              },
+          }}
+          >
+          <style>
+              {`
+              @keyframes moveLight {
+                  0% {
+                  left: -120px;
+                  }
+                  100% {
+                  left: 120px;
+                  }
+              }
+              `}
+          </style>
+          </Grid>
       <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
         {experiences.map((experience, index) => (
           <Grid item size={{ xs:11, sm:5.5, md:3.5, lg:3 }} key={index}>

@@ -5,14 +5,15 @@ import Navbar from './Navbar';
 import Services from './Services';
 import WorkExperience from './WorkExperience';
 import ContactMe from "./ContactMe";
+import Footer from "./Footer";
 
 function Home() {
   return (
     <Grid>
-      <Navbar />
       <div id="hero">
-        <HeroSection />
+        <Navbar />
       </div>
+      <HeroSection />
       <div id="about">
         <AboutMe />
       </div>
@@ -25,6 +26,7 @@ function Home() {
       <div id="contact">
         <ContactMe />
       </div>
+      <Footer/>
     </Grid>
   );
 }
