@@ -26,10 +26,80 @@ const servicesData = [
   },
 ];
 
-const Services = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+const ServiceCard = ({ title, description, icon, index }) => {
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true });
 
+  return (
+    <Grid item size={{ xs: 12, sm: 5.5, md: 3.5, lg: 3 }} ref={cardRef}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1, delay: index * 0.3 }}
+      >
+        <Card
+          sx={{
+            p: 2,
+            borderRadius: 3,
+            boxShadow: 3,
+            transition: "transform 0.3s",
+            "&:hover": { transform: "scale(1.02)" },
+          }}
+        >
+          <CardContent>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                mb: 2,
+              }}
+            >
+              <Box
+                sx={{
+                  width: 64,
+                  height: 64,
+                  borderRadius: "50%",
+                  backgroundColor: "#ffe6e6",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontSize: "24px",
+                }}
+              >
+                {icon}
+              </Box>
+            </Box>
+            <Typography variant="H24px" color="textPrimary" align="center">
+              {title}
+            </Typography>
+            <Typography
+              variant="body1"
+              align="center"
+              color="textSecondary"
+              mt={1}
+              mb={2}
+            >
+              {description}
+            </Typography>
+            <Box display="flex" justifyContent="center">
+              <IconButton
+                sx={{
+                  backgroundColor: "#f0f0f0",
+                  "&:hover": { backgroundColor: "#e0e0e0" },
+                }}
+              >
+                <ArrowForwardIosIcon />
+              </IconButton>
+            </Box>
+          </CardContent>
+        </Card>
+      </motion.div>
+    </Grid>
+  );
+};
+
+const Services = () => {
   return (
     <Box
       sx={{ backgroundColor: "#fef6f5", padding: { xs: "35px", md: "50px" } }}
@@ -74,73 +144,15 @@ const Services = () => {
           `}
         </style>
       </Grid>
-      <Grid container spacing={4} justifyContent="center" ref={ref}>
+      <Grid container spacing={4} justifyContent="center">
         {servicesData.map((service, index) => (
-          <Grid item  size={{xs:12, sm:5.5, md:3.5, lg:3}} key={index} >
-            <motion.div
-              initial={{ opacity: 0, x: -90 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1.2, delay: index * 0.3 }}
-            >
-              <Card
-                sx={{
-                  p: 2,
-                  borderRadius: 3,
-                  boxShadow: 3,
-                  transition: "transform 0.3s",
-                  "&:hover": { transform: "scale(1.02)" },
-                }}
-              >
-                <CardContent>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      mb: 2,
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        width: 64,
-                        height: 64,
-                        borderRadius: "50%",
-                        backgroundColor: "#ffe6e6",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        fontSize: "24px",
-                      }}
-                    >
-                      {service.icon}
-                    </Box>
-                  </Box>
-                  <Typography variant="H24px" color="textPrimary" align="center">
-                    {service.title}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    align="center"
-                    color="textSecondary"
-                    mt={1}
-                    mb={2}
-                  >
-                    {service.description}
-                  </Typography>
-                  <Box display="flex" justifyContent="center">
-                    <IconButton
-                      sx={{
-                        backgroundColor: "#f0f0f0",
-                        "&:hover": { backgroundColor: "#e0e0e0" },
-                      }}
-                    >
-                      <ArrowForwardIosIcon />
-                    </IconButton>
-                  </Box>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </Grid>
+          <ServiceCard
+            key={index}
+            index={index}
+            title={service.title}
+            description={service.description}
+            icon={service.icon}
+          />
         ))}
       </Grid>
     </Box>
