@@ -72,7 +72,7 @@ const WorkExperience = () => {
           </Grid>
       <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
         {experiences.map((experience, index) => (
-          <Grid item size={{ xs:11, sm:5.5, md:3.5, lg:3 }} key={index}>
+          <Grid item size={{ xs:12, sm:5.5, md:3.5, lg:3 }} key={index}>
             <Card
               sx={{
                 p: 2,

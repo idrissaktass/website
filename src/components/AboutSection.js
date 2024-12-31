@@ -83,7 +83,7 @@ const AboutMe = () => {
               Developing With a Passion While Exploring The World.
             </Typography>
             <Grid mt={1}
-                justifySelf={"start"}
+                justifySelf={{xs:"center", md:"start"}}
                 sx={{
                 backgroundColor: "#f06262",
                 width: "120px",

@@ -76,7 +76,7 @@ const Services = () => {
       </Grid>
       <Grid container spacing={4} justifyContent="center" ref={ref}>
         {servicesData.map((service, index) => (
-          <Grid item  size={{xs:11, sm:5.5, md:3.5, lg:3}} key={index} >
+          <Grid item  size={{xs:12, sm:5.5, md:3.5, lg:3}} key={index} >
             <motion.div
               initial={{ opacity: 0, x: -90 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
