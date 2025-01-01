@@ -1,6 +1,14 @@
 import React, { useRef } from "react";
-import { Box, Typography, Button, Grid } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import { motion, useInView } from "framer-motion";
+import { Grid } from "@mui/system";
+
+const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
 const TextSection = () => {
   const textRef = useRef(null);
@@ -64,6 +72,8 @@ const TextSection = () => {
           adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
         </Typography>
         <Button
+          onClick={() => scrollToSection("contact")}
+          key={"contact"}
           variant="contained"
           sx={{
             backgroundColor: "#f06262",
