@@ -17,10 +17,10 @@ const ContactMe = () => {
 
     emailjs
       .sendForm(
-        "service_7st8pbj", // Replace with your EmailJS Service ID
-        "template_63i9e4h", // Replace with your EmailJS Template ID
+        "service_7st8pbj",
+        "template_63i9e4h",
         formRef.current,
-        "offOxd6LjCh6-Ctmj" // Replace with your EmailJS Public Key
+        "offOxd6LjCh6-Ctmj"
       )
       .then(
         (result) => {
@@ -149,7 +149,6 @@ const ContactMe = () => {
             </Typography>
           </Box>
         </Box>
-          {/* Form Section */}
           <Box
             component="form"
             ref={formRef}
@@ -194,18 +193,44 @@ const ContactMe = () => {
               margin="normal"
               required
             />
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{
-                backgroundColor: "#f06262",
-                color: "white",
-                textTransform: "none",
-                "&:hover": { backgroundColor: "#e04e4e" },
-              }}
-            >
-              <Typography variant="body1">Submit</Typography>
-            </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            position: "relative",
+            backgroundColor: "#f06262",
+            color: "white",
+            textTransform: "none",
+            overflow: "hidden",
+            "&:hover": { backgroundColor: "#e04e4e" },
+            "::before": {
+              content: '""',
+              position: "absolute",
+              top: 50,
+              left: "150%",
+              width: "300%",
+              height: "100%",
+              background: "linear-gradient(to right, transparent, rgba(255, 202, 202, 0.6), transparent)",
+              zIndex: 1,
+              transform: "rotate(45deg)",
+              animation: "lightBorder 3.5s infinite",
+            },
+          }}
+        >
+          <Typography>Submit</Typography>
+          <style>
+            {`
+              @keyframes lightBorder {
+                0% {
+                  left: -150%;
+                }
+                100% {
+                  left: 150%;
+                }
+              }
+            `}
+          </style>
+        </Button>
           </Box>
         </motion.div>
       </Grid>

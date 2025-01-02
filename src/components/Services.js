@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Card, CardContent, Typography, IconButton, Box } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Grid } from "@mui/system";
 import LaptopOutlinedIcon from "@mui/icons-material/LaptopOutlined";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 const servicesData = [
   {
@@ -29,6 +29,25 @@ const servicesData = [
 const ServiceCard = ({ title, description, icon, index }) => {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const startAnimation = async () => {
+      while (true) {
+        await controls.start({
+          scale: [1, 1.05, 1],
+          transition: { duration: 0.9 },
+        });
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      }
+    };
+
+    const delay = index * 500; // Her kart için başlangıçta farklı gecikme
+    const timeout = setTimeout(() => startAnimation(), delay);
+
+    return () => clearTimeout(timeout);
+  }, [controls, index]);
+
 
   return (
     <Grid item size={{ xs: 12, sm: 5.5, md: 3.5, lg: 3 }} ref={cardRef}>
@@ -37,6 +56,7 @@ const ServiceCard = ({ title, description, icon, index }) => {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, delay: index * 0.3 }}
       >
+        <motion.div animate={controls}>
         <Card
           sx={{
             p: 2,
@@ -94,6 +114,7 @@ const ServiceCard = ({ title, description, icon, index }) => {
             </Box>
           </CardContent>
         </Card>
+        </motion.div>
       </motion.div>
     </Grid>
   );

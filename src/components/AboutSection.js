@@ -76,12 +76,39 @@ const TextSection = () => {
           key={"contact"}
           variant="contained"
           sx={{
+            position: "relative",
             backgroundColor: "#f06262",
             color: "white",
+            textTransform: "none",
+            overflow: "hidden",
             "&:hover": { backgroundColor: "#e04e4e" },
+            "::before": {
+              content: '""',
+              position: "absolute",
+              top: 50,
+              left: "150%",
+              width: "300%",
+              height: "100%",
+              background: "linear-gradient(to right, transparent, rgba(255, 202, 202, 0.6), transparent)",
+              zIndex: 1,
+              transform: "rotate(45deg)",
+              animation: "lightBorder 3.5s infinite",
+            },
           }}
         >
-          <Typography variant="body1">Contact Me</Typography>
+          <Typography>Contact Me</Typography>
+          <style>
+            {`
+              @keyframes lightBorder {
+                0% {
+                  left: -150%;
+                }
+                100% {
+                  left: 150%;
+                }
+              }
+            `}
+          </style>
         </Button>
       </Box>
     </motion.div>

@@ -51,17 +51,43 @@ const Navbar = () => {
           ))}
         </Box>
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#f06262",
-              color: "white",
-              textTransform: "none",
-              "&:hover": { backgroundColor: "#e04e4e" },
-            }}
-          >
-            <Typography variant="body1">Hire Me</Typography>
-          </Button>
+        <Button
+          variant="contained"
+          sx={{
+            position: "relative",
+            backgroundColor: "#f06262",
+            color: "white",
+            textTransform: "none",
+            overflow: "hidden",
+            "&:hover": { backgroundColor: "#e04e4e" },
+            "::before": {
+              content: '""',
+              position: "absolute",
+              top: 50,
+              left: "150%",
+              width: "300%",
+              height: "100%",
+              background: "linear-gradient(to right, transparent, rgba(255, 202, 202, 0.6), transparent)",
+              zIndex: 1,
+              transform: "rotate(45deg)",
+              animation: "lightBorder 3.5s infinite",
+            },
+          }}
+        >
+          <Typography>Hire Me</Typography>
+          <style>
+            {`
+              @keyframes lightBorder {
+                0% {
+                  left: -150%;
+                }
+                100% {
+                  left: 150%;
+                }
+              }
+            `}
+          </style>
+        </Button>
         </Box>
         <IconButton
           edge="end"
