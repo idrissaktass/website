@@ -1,8 +1,5 @@
 import React, { useRef, useState } from "react";
 import { Box, Typography, TextField, Button, CircularProgress, Card } from "@mui/material";
-import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Grid } from "@mui/system";
 import { motion, useInView } from "framer-motion";
 import emailjs from "emailjs-com";
@@ -55,7 +52,8 @@ const ContactMe = () => {
         size={{ xs: 12, sm: 10, md: 9, lg: 7, xl: 6 }}
         sx={{ position: "relative" }}
       >
-        <motion.div style={{width:"100%"}}
+        <motion.div
+          style={{ width: "100%" }}
           ref={ref}
           initial={{ opacity: 0.8, y: -120 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -95,22 +93,6 @@ const ContactMe = () => {
               Contact Me
             </Typography>
           </Box>
-
-          {emailSent ? (
-            <Card
-              sx={{
-                my:5,
-                width: "100%",
-                p: 3,
-                textAlign: "center",
-                bgcolor: "#e0ffe0",
-              }}
-            >
-              <Typography variant="h6" color="green">
-                Email successfully sent!
-              </Typography>
-            </Card>
-          ) : (
             <Box
               component="form"
               ref={formRef}
@@ -123,21 +105,22 @@ const ContactMe = () => {
                 width: "100%",
                 position: "relative",
                 zIndex: 1,
-                opacity: isLoading ? 0.5 : 1,
+                pointerEvents: (isLoading || emailSent) ? "none" : "auto", // Disable form while loading
               }}
             >
-              <Typography variant="h6" mb={2} color="textPrimary">
+              <Typography variant="h6" mb={2} color="textPrimary" sx={{ opacity: (isLoading || emailSent) ? 0.5 : 1 }}>
                 Leave a Message
               </Typography>
-              <TextField
+              <TextField  sx={{ opacity: (isLoading || emailSent) ? 0.5 : 1 }}
                 label="Name"
                 name="user_name"
                 variant="outlined"
                 fullWidth
                 margin="normal"
                 required
+                disabled={isLoading || emailSent}
               />
-              <TextField
+              <TextField  sx={{ opacity: (isLoading || emailSent) ? 0.5 : 1 }}
                 label="E-Mail"
                 name="user_email"
                 type="email"
@@ -145,8 +128,9 @@ const ContactMe = () => {
                 fullWidth
                 margin="normal"
                 required
+                disabled={isLoading || emailSent}
               />
-              <TextField
+              <TextField  sx={{ opacity: (isLoading || emailSent) ? 0.5 : 1 }}
                 label="Message"
                 name="message"
                 variant="outlined"
@@ -155,6 +139,7 @@ const ContactMe = () => {
                 fullWidth
                 margin="normal"
                 required
+                disabled={isLoading || emailSent}
               />
               <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                 <Button
@@ -166,23 +151,46 @@ const ContactMe = () => {
                     textTransform: "none",
                     "&:hover": { backgroundColor: "#e04e4e" },
                   }}
-                  disabled={isLoading}
+                  disabled={isLoading || emailSent}
                 >
                   Submit
                 </Button>
-                {isLoading && <CircularProgress size={24} />}
+                {isLoading && (
+                  <CircularProgress
+                    size={48}
+                    sx={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                    }}
+                  />
+                )}
+                {emailSent && (
+                  <Card
+                    sx={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "80%",
+                      p: 3,
+                      textAlign: "center",
+                      bgcolor: "#e0ffe0",
+                    }}
+                  >
+                  <Typography variant="h6" color="green">
+                    Email successfully sent!
+                  </Typography>
+                </Card>
+                )}
               </Box>
               {emailError && (
-                <Typography
-                  variant="body2"
-                  color="error"
-                  mt={1}
-                >
+                <Typography variant="body2" color="error" mt={1}>
                   Failed to send message. Please try again.
                 </Typography>
               )}
             </Box>
-          )}
         </motion.div>
       </Grid>
     </Grid>
