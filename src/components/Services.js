@@ -9,13 +9,13 @@ const servicesData = [
   {
     title: "UI/UX Design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     icon: <LaptopOutlinedIcon />,
   },
   {
     title: "Digital Marketing",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     icon: <LaptopOutlinedIcon />,
   },
   {
@@ -27,8 +27,8 @@ const servicesData = [
 ];
 
 const ServiceCard = ({ title, description, icon, index }) => {
-  const [flipped, setFlipped] = useState(false);
   const cardRef = useRef(null);
+  const [hovered, setHovered] = useState(false); // Track hover state
   const isInView = useInView(cardRef, { once: true });
   const controls = useAnimation();
 
@@ -41,7 +41,7 @@ const ServiceCard = ({ title, description, icon, index }) => {
     };
   
     const intervalId = setInterval(() => {
-      if (!flipped) {
+      if (!hovered) {
         startAnimation();
       }
     }, 4000);
@@ -49,9 +49,7 @@ const ServiceCard = ({ title, description, icon, index }) => {
     return () => {
       clearInterval(intervalId);
     };
-  }, [controls, flipped, index]);
-  
-
+  }, [controls, hovered, index]);
   return (
     <Grid item size={{ xs: 12, sm: 5.5, md: 3.5, lg: 3 }} ref={cardRef}>
       <motion.div
@@ -59,116 +57,85 @@ const ServiceCard = ({ title, description, icon, index }) => {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, delay: index * 0.3 }}
       >
-        <motion.div animate={flipped ? {} : controls}>
-          <Box
-            sx={{
-              perspective: "1000px",
-            }}
-          >
+        <motion.div animate={controls}>
+        <Card
+  sx={{
+    backgroundColor: hovered ? "#00203b" : "transparent",
+    p: 2,
+    borderRadius: 3,
+    boxShadow: 3,
+    transition: "transform 0.3s, background-color 0.6s",
+    position: "relative",
+    height: 200,
+    overflow: "hidden",
+    "&:hover": { transform: "scale(1.02)" },
+  }}
+  onMouseEnter={() => setHovered(true)}
+  onMouseLeave={() => setHovered(false)}
+>
             <Box
+  sx={{
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundImage: "url('/snippet.jpg')",
+    backgroundSize: hovered ? "160%" : "cover", 
+    backgroundPosition: "center",
+    opacity: hovered ? 0 : 0.3, 
+    transition: "background-size 2s ease, opacity 0.6s ease",
+    zIndex: 1,
+  }}
+/>
+
+
+            <CardContent
               sx={{
-                position: "relative",
-                width: "100%",
-                height: flipped ? "max-content" : "220px",
-                transformStyle: "preserve-3d",
-                transition: "transform 0.6s",
-                transform: flipped ? "rotateY(180deg)" : "rotateY(0)",
+                mt: hovered ? 2 : 0,
+                position: "absolute",
+                top: hovered ? "10%" : "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                textAlign: "center",
+                color: "white",
+                zIndex: 2,
+                transition: "top 0.3s",
               }}
             >
-              {/* Ön Yüz */}
-              <Card
-                sx={{
-                  display:"flex",
-                  flexDirection:"column",
-                  justifyContent:"center",
-                  position: "absolute",
-                  width: "100%",
-                  height: "100%",
-                  backfaceVisibility: "hidden",
-                  borderRadius: 3,
-                  boxShadow: 3,
-                  transition: "transform 0.3s",
-                  "&:hover": { transform: "scale(1.02)" },
-                }}
-              >
-                <CardContent>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      mb: 2,
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        width: 64,
-                        height: 64,
-                        borderRadius: "50%",
-                        backgroundColor: "#ffe6e6",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        fontSize: "24px",
-                      }}
-                    >
-                      {icon}
-                    </Box>
-                  </Box>
-                  <Typography variant="h6" color="textPrimary" align="center">
-                    {title}
-                  </Typography>
-                  <Box display="flex" justifyContent="center" mt={2}>
-                    <IconButton
-                      onClick={() => setFlipped(!flipped)}
-                      sx={{
-                        backgroundColor: "#f0f0f0",
-                        "&:hover": { backgroundColor: "#e0e0e0" },
-                      }}
-                    >
-                      <ArrowForwardIosIcon />
-                    </IconButton>
-                  </Box>
-                </CardContent>
-              </Card>
+              <Typography  variant="H24px" color={hovered ? "white" : "textPrimary"} align="center">
+                {title}
+              </Typography>
+            </CardContent>
 
-              {/* Arka Yüz */}
-              <Card
-                sx={{
-                  display:"flex",
-                  flexDirection:"column",
-                  justifyContent:"center",
-                  width: "100%",
-                  minHeight:"220px",
-                  backfaceVisibility: "hidden",
-                  transform: "rotateY(180deg)",
-                  borderRadius: 3,
-                  boxShadow: 3,
-                }}
+            <motion.div
+              style={{
+                display: hovered ? "flex" : "none",
+                zIndex: 2,
+                textAlign: "center",
+                alignItems:"center",
+                height:"100%"
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: hovered ? 1 : 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Typography
+                variant="body1"
+                align="center"
+                color={hovered ? "white" : "textSecondary"}
               >
-                <CardContent>
-                  <Typography
-                    variant="body1"
-                    align="center"
-                    color="textSecondary"
-                  >
-                    {description}
-                  </Typography>
-                  <Box display="flex" justifyContent="center" mt={2}>
-                    <IconButton
-                      onClick={() => setFlipped(!flipped)}
-                      sx={{
-                        backgroundColor: "#f0f0f0",
-                        "&:hover": { backgroundColor: "#e0e0e0" },
-                      }}
-                    >
-                      <ArrowForwardIosIcon sx={{ transform: "rotate(180deg)" }} />
-                    </IconButton>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Box>
-          </Box>
+                {description}
+              </Typography>
+            </motion.div>
+
+            <motion.div
+              style={{
+                display: hovered ? "none" : "block", 
+              }}
+            >
+            </motion.div>
+          </Card>
         </motion.div>
       </motion.div>
     </Grid>
@@ -180,7 +147,7 @@ const Services = () => {
     <Box
       sx={{ backgroundColor: "#fef6f5", padding: { xs: "35px", md: "50px" } }}
     >
-      <Typography variant="h4" align="center" color="textPrimary">
+      <Typography variant="H38px" align="center" color="textPrimary">
         What Services I'm Providing
       </Typography>
       <Typography variant="body1" align="center" color="textSecondary" mb={2}>
