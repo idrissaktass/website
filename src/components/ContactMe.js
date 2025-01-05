@@ -173,13 +173,13 @@ const ContactMe = () => {
                       top: "50%",
                       left: "50%",
                       transform: "translate(-50%, -50%)",
-                      width: "80%",
-                      p: 3,
+                      width:"max-content",
+                      p: 4,
                       textAlign: "center",
-                      bgcolor: "#e0ffe0",
+                      bgcolor: "#002f63",
                     }}
                   >
-                  <Typography variant="h6" color="green">
+                  <Typography variant="H24px" color="white">
                     Email successfully sent!
                   </Typography>
                 </Card>

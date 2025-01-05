@@ -60,7 +60,7 @@ const ServiceCard = ({ title, description, icon, index }) => {
         <motion.div animate={controls}>
         <Card
   sx={{
-    backgroundColor: hovered ? "#00203b" : "transparent",
+    backgroundColor: hovered ? "#002f63" : "transparent",
     p: 2,
     borderRadius: 3,
     boxShadow: 3,
