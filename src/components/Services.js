@@ -9,7 +9,7 @@ const servicesData = [
   {
     title: "UI/UX Design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     icon: <LaptopOutlinedIcon />,
   },
   {
@@ -66,14 +66,15 @@ const ServiceCard = ({ title, description, icon, index }) => {
     boxShadow: 3,
     transition: "transform 0.3s, background-color 0.6s",
     position: "relative",
-    height: 200,
+    minHeight:200,
+    height: hovered ? "max-content" : 200,
     overflow: "hidden",
     "&:hover": { transform: "scale(1.02)" },
   }}
   onMouseEnter={() => setHovered(true)}
   onMouseLeave={() => setHovered(false)}
 >
-            <Box
+<Box
   sx={{
     position: "absolute",
     top: 0,
@@ -81,20 +82,23 @@ const ServiceCard = ({ title, description, icon, index }) => {
     width: "100%",
     height: "100%",
     backgroundImage: "url('/snippet.jpg')",
-    backgroundSize: hovered ? "160%" : "cover", 
+    backgroundSize: hovered ? "180%" : "cover", 
     backgroundPosition: "center",
-    opacity: hovered ? 0 : 0.3, 
-    transition: "background-size 2s ease, opacity 0.6s ease",
+    opacity: hovered ? 0 : 0.3,
+    transition: "background-size 0.6s ease, opacity 0.6s ease, transform 0.6s ease", 
+    transform: hovered ? "scale(1.1)" : "scale(1)",
     zIndex: 1,
   }}
 />
 
 
+
             <CardContent
               sx={{
+                height:"10px",
                 mt: hovered ? 2 : 0,
-                position: "absolute",
-                top: hovered ? "10%" : "50%",
+                position: "relative",
+                top: hovered ? "10%" : "45%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
                 textAlign: "center",
