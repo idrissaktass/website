@@ -40,7 +40,7 @@ const ContactMe = () => {
   return (
     <Grid
       container
-      bgcolor={"#fef6f5"}
+      bgcolor={"#00fff208"}
       display={"flex"}
       justifyContent={"center"}
       p={{ xs: "35px", md: "50px" }}
@@ -85,7 +85,7 @@ const ContactMe = () => {
               Let's get in touch
             </Typography>
             <Typography
-              variant="H54px"
+              variant="H48px"
               mb={4}
               textAlign={"start"}
               color="textPrimary"
@@ -148,7 +148,7 @@ const ContactMe = () => {
                   disabled={isLoading || emailSent}
                   sx={{
                     position: "relative",
-                    backgroundColor: "#f06262",
+                    backgroundColor: "#61a05f",
                     color: "white",
                     textTransform: "none",
                     overflow: "hidden",

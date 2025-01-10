@@ -20,17 +20,23 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#fef6f5", boxShadow: "none", paddingTop: 1.5 }}>
+    <AppBar position="static" sx={{ backgroundColor: "#00fff208", boxShadow: "none", paddingTop: 1.5 }}>
       <Toolbar sx={{ justifyContent: { xs: "space-between", sm: "space-around" } }}>
         <Typography
           variant="h6"
           sx={{
-            color: "#f06262",
+            color: "#61a05f",
             fontWeight: "bold",
             fontSize: "20px",
           }}
         >
-          LOGO
+        <Box
+          component="img"
+          src="helmet.svg"
+          alt="Helmet"
+          sx={{ width: "50px", height: 'auto' }}
+        />
+
         </Typography>
         <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 4 }}>
           {[
@@ -44,7 +50,7 @@ const Navbar = () => {
               variant="H24px"
               color="textPrimary"
               onClick={() => scrollToSection(item.id)}
-              sx={{ cursor: "pointer" }}
+              sx={{ cursor: "pointer" }} 
             >
               {item.label}
             </Typography>
@@ -55,7 +61,7 @@ const Navbar = () => {
           variant="contained"
           sx={{
             position: "relative",
-            backgroundColor: "#f06262",
+            backgroundColor: "#61a05f",
             color: "white",
             textTransform: "none",
             overflow: "hidden",
@@ -73,6 +79,7 @@ const Navbar = () => {
               animation: "lightBorder 3.5s infinite",
             },
           }}
+          onClick={() => scrollToSection('contact')} // Navigate to Contact section
         >
           <Typography>Hire Me</Typography>
           <style>
@@ -88,6 +95,7 @@ const Navbar = () => {
             `}
           </style>
         </Button>
+
         </Box>
         <IconButton
           edge="end"
@@ -96,7 +104,7 @@ const Navbar = () => {
           sx={{ display: { xs: "block", sm: "none" } }}
           onClick={toggleDrawer(true)}
         >
-          <MenuIcon sx={{ color: "#f06262" }} />
+          <MenuIcon sx={{ color: "#61a05f" }} />
         </IconButton>
         <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}>
           <Box
@@ -121,7 +129,7 @@ const Navbar = () => {
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: "#f06262",
+                  backgroundColor: "#61a05f",
                   color: "white",
                   textTransform: "none",
                   "&:hover": { backgroundColor: "#e04e4e" },

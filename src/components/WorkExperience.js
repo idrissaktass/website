@@ -55,22 +55,29 @@ const WorkExperience = () => {
       category: 'WORK EXPERIENCE',
       items: [
         {
-          title: 'Senior Developer',
-          company: 'Company Name',
-          period: '2018 - Current',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        },
+          title: 'Frontend Developer',
+          company: 'PokaMind',
+          period: '01.2024 - 10.2024',
+          description: (
+            <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
+              <li>• Developing and improving web application using React and Typescript.</li>
+              <li>• Backend development with Python when needed.</li>
+              <li>• Integrating new designs from Figma to application by collaborating with designers.</li>
+              <li>• Integrating the design into the application using Material UI.</li>
+              <li>• Working in collaboration with back end developers.</li>
+            </ul>
+          ),
+        },        
         {
-          title: 'Junior Developer',
-          company: 'Company Name',
-          period: '2013 - 2015',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        },
-        {
-          title: 'UI/UX Designer',
-          company: 'Company Name',
-          period: '2010 - 2012',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          title: 'Full Stack Intern',
+          company: 'PokaMind',
+          period: '10.2023 - 12.2023',
+          description: (
+            <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
+              <li>• Developing and improving web application using React, Next.js and Typescript.</li>
+              <li>• Integrating the design into the application using Bootstrap.</li>
+            </ul>
+          ),
         },
       ],
     },
@@ -78,35 +85,31 @@ const WorkExperience = () => {
       category: 'EDUCATION',
       items: [
         {
-          title: 'Masters Degree',
-          institution: 'University Name',
-          period: '2007 - 2009',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          title: 'Bachelors Degree, Computer Engineering',
+          institution: 'Cukurova University',
+          period: '2017 - 2023',
+          description: (
+            <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
+              <li>• After one year of preparatory class, I transitioned to the department, where the foundations of software development were laid.</li>
+            </ul>
+          ),
         },
         {
-          title: 'Bachelors Degree',
-          institution: 'University Name',
-          period: '2002 - 2008',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        },
-        {
-          title: 'Diploma Course',
-          institution: 'College Name',
-          period: '1999 - 2001',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        },
-        {
-          title: 'Graduation',
-          institution: 'College Name',
-          period: '1994 - 1998',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          title: 'Bachelors Degree, Computer and Informatics Engineering',
+          institution: 'Aveiro University',
+          period: '2021 - 2022',
+          description: (
+            <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
+              <li>• During my Erasmus program at Aveiro University in Portugal, I improved both my education and English skills, which greatly helped me socially.</li>
+            </ul>
+          ),
         },
       ],
     },
   ];
 
   return (
-    <Box sx={{ padding: { xs: "35px", md: "50px", backgroundColor: "#fffbfa" } }}>
+    <Box sx={{ padding: { xs: "35px", md: "50px", backgroundColor: "#00fff212" } }}>
       <Typography variant="H38px" align="center" color="textPrimary">
         Experience
       </Typography>
@@ -116,7 +119,7 @@ const WorkExperience = () => {
       <Grid mb={4}
         justifySelf={"center"}
         sx={{
-          backgroundColor: "#f06262",
+          backgroundColor: "#61a05f",
           width: "120px",
           height: "2px",
           position: "relative",
@@ -150,7 +153,7 @@ const WorkExperience = () => {
         <Box key={index} mb={4}>
           <Typography fontWeight={900} fontSize={"20px"}
             color='textSecondary'
-            bgcolor={"#f06262"}
+            bgcolor={"#61a05f"}
             borderRadius={"5px"}
             width={"fit-content"}
             justifySelf={"center"}

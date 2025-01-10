@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Typography, Link } from "@mui/material";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 const Footer = () => {
   const handleScrollToTop = () => {
@@ -17,7 +16,7 @@ const Footer = () => {
         backgroundColor: "#444",
         color: "#fff",
         textAlign: "center",
-        py: 3,
+        pt: 3,
         mt: "auto",
       }}
     >
@@ -26,27 +25,15 @@ const Footer = () => {
         sx={{ mb: 1, cursor: "pointer" }}
         onClick={handleScrollToTop}
       >
-        <ArrowUpwardIcon sx={{ position: "relative", top: "5px" }} /> Back to Top
+        Back to Top
       </Typography>
       <Typography variant="body1" sx={{ mt: 1 }}>
-        Elif Toraman
+        İdris Aktaş
       </Typography>
       <Box sx={{ mt: 2 }}>
-        <Link href="#" underline="hover" color="inherit" sx={{ mx: 1 }}>
-          Privacy & Terms of Use
-        </Link>
-        <Link href="#" underline="hover" color="inherit" sx={{ mx: 1 }}>
-          About
-        </Link>
-        <Link href="#" underline="hover" color="inherit" sx={{ mx: 1 }}>
-          Why Trust Me
-        </Link>
-        <Link href="#" underline="hover" color="inherit" sx={{ mx: 1 }}>
-          Policy
-        </Link>
-        <Link href="#" underline="hover" color="inherit" sx={{ mx: 1 }}>
-          Email Me
-        </Link>
+      <Link href="mailto:idrissaktass98@gmail.com" underline="hover" color="inherit" sx={{ mx: 1 }}>
+        Email Me
+      </Link>
       </Box>
       <Box sx={{ mt: 2 }}>
         <Link href="#" underline="hover" color="inherit" sx={{ mx: 1 }}>

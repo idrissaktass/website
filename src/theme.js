@@ -3,24 +3,24 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#f06262", // Ana renk (ör. Hire Me butonu için)
+      main: "#61a05f",
     },
     secondary: {
-      main: "#fef6f5", // Navbar arka plan rengi
+      main: "#00fff208",
     },
     text: {
-      primary: "#002f63", // Menü metin rengi
+      primary: "#002f63",
       secondary: "#001022c9",
     },
   },
   typography: {
     fontFamily: "'Playfair Display', serif",
-    fontSize: 14, // Varsayılan font boyutu
+    fontSize: 14,
     button: {
-      textTransform: "none", // Buton yazıları için
+      textTransform: "none",
     },
-    H54px: {
-      fontSize: "54px",
+    H48px: {
+      fontSize: "48px",
       fontWeight: 700,
     },
     H38px: {
@@ -31,8 +31,12 @@ const theme = createTheme({
       fontSize: "24px",
       fontWeight: 600,
     },
+    H32px: {
+      fontSize: "32px",
+      fontWeight: 600,
+    },
     body1: {
-      fontSize: "20px", // Genel metin boyutu
+      fontSize: "20px",
       fontWeight: "500"
     },
   },

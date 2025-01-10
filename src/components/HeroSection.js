@@ -13,56 +13,16 @@ const TextContent = () => {
       animate={isTextInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 1 }}
     >
-      <Box sx={{ maxWidth: "500px", textAlign: { xs: "center", md: "left" } }}>
-        <Typography variant="H54px" mb={2} color="textPrimary">
-          I'm Web Developer
+      <Box sx={{ maxWidth: "600px", textAlign: { xs: "center", md: "left" } }}>
+        <Typography variant="H48px" mb={2} color="textPrimary">
+          I'm Frontend Developer
           <br />
-          Elif Toraman
+          İdris Aktaş
         </Typography>
 
-        <Typography color="textSecondary" mb={3}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctus nec
-          ullamcorper mattis, pulvinar dapibus leo.
+        <Typography color="textSecondary" mt={2}>
+          Turning ideas into impactful web experiences with React, TypeScript, and the MERN Stack. Let's build something amazing together!
         </Typography>
-
-        <Button
-          variant="contained"
-          sx={{
-            position: "relative",
-            backgroundColor: "#f06262",
-            color: "white",
-            textTransform: "none",
-            overflow: "hidden",
-            "&:hover": { backgroundColor: "#e04e4e" },
-            "::before": {
-              content: '""',
-              position: "absolute",
-              top: 50,
-              left: "150%",
-              width: "300%",
-              height: "100%",
-              background: "linear-gradient(to right, transparent, rgba(255, 202, 202, 0.6), transparent)",
-              zIndex: 1,
-              transform: "rotate(45deg)",
-              animation: "lightBorder 3.5s infinite",
-            },
-          }}
-        >
-          <Typography>Learn More</Typography>
-          <style>
-            {`
-              @keyframes lightBorder {
-                0% {
-                  left: -150%;
-                }
-                100% {
-                  left: 150%;
-                }
-              }
-            `}
-          </style>
-        </Button>
-
       </Box>
     </motion.div>
   );
@@ -79,26 +39,19 @@ const ImageContent = () => {
       animate={isImageInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1 }}
     >
-      <Box
-        sx={{
-          height: { xs: "350px", md: "500px" },
-          overflow: "hidden",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
         <Box
           component="img"
-          src="/megan.png"
-          alt="Megan"
+          src="/renovation.png"
           sx={{
+            display:"flex",
+            justifySelf:{xs:"center", md:"unset"},
             objectFit: "cover",
-            width: "100%",
-            height: "auto",
+            width: {xs:"120%", sm:"70%", md:"400px", lg:"500px"},
+            height: "100%",
+            maxHeight: "100%",
             borderRadius: "10px",
           }}
         />
-      </Box>
     </motion.div>
   );
 };
@@ -112,8 +65,8 @@ const HeroSection = () => {
         alignItems: "center",
         justifyContent: "space-evenly",
         gap: { xs: 5, md: 0 },
-        backgroundColor: "#fef6f5",
-        padding: { xs: "35px", md: "50px" },
+        backgroundColor: "#00fff208",
+        padding: { xs: "60px 35px 60px 35px", md: "100px 50px 100px 50px" },
       }}
     >
       <TextContent />
