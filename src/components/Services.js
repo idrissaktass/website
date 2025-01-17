@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Card, CardContent, Typography, IconButton, Box } from "@mui/material";
+import { Card, CardContent, Typography, useMediaQuery, useTheme, Box } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Grid } from "@mui/system";
 import LaptopOutlinedIcon from "@mui/icons-material/LaptopOutlined";
@@ -27,6 +27,8 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
   const [hovered, setHovered] = useState(false);
   const isInView = useInView(cardRef, { once: true });
   const controls = useAnimation();
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
   useEffect(() => {
     const startAnimation = async () => {
@@ -48,12 +50,11 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
   }, [controls, hovered, index]);
 
   return (
-    <Grid
-      item
-      size={{ xs: 12, sm: 8, md: 4, xl: 3 }}
-      ref={cardRef}
-      onClick={() => window.open(link, "_blank")}
-      style={{ cursor: "pointer" }} // Mouse imlecini değiştirir
+    <Grid item size={{ xs: 12, sm: 8, md: 5, lg: 4.1, xl: 3 }} ref={cardRef}
+    sx={{
+      cursor: isMdUp ? 'pointer' : 'default',
+    }}
+    onClick={isMdUp ? () => window.open(link, "_blank") : null}
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -63,8 +64,9 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
         <motion.div animate={controls}>
           <Card
             sx={{
-              backgroundColor: hovered ? "#002f63" : "transparent",
+              backgroundColor: hovered ? "#0b260b" : "transparent",
               p: 2,
+              border: "2px solid rgb(0, 0, 0)",
               borderRadius: 3,
               boxShadow: 3,
               transition: "transform 0.3s, background-color 0.6s",
@@ -87,7 +89,7 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
                 backgroundImage: "url('/practices.jpg')",
                 backgroundSize: hovered ? "180%" : "cover",
                 backgroundPosition: "center",
-                opacity: hovered ? 0 : 0.3,
+                opacity: hovered ? 0 : 0.6,
                 transition:
                   "background-size 0.6s ease, opacity 0.6s ease, transform 0.6s ease",
                 transform: hovered ? "scale(1.1)" : "scale(1)",
@@ -110,8 +112,12 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
             >
               <Typography
                 variant="H32px"
-                color={hovered ? "white" : "textPrimary"}
+                color="textThird"
                 align="center"
+                bgcolor={hovered ? "none" : "#305041b8"}
+                border={hovered ? "none" : "2px solid #305041"}
+                borderRadius={hovered ? "none" : "10px"}
+                padding={hovered ? "0" : "4px"}
               >
                 {title}
               </Typography>
@@ -120,7 +126,9 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
             <motion.div
               style={{
                 display: hovered ? "flex" : "none",
-                zIndex: 2,
+                zIndex: 3,
+                gap: 10,
+                flexDirection: "column",
                 textAlign: "center",
                 alignItems: "center",
                 height: "100%",
@@ -136,20 +144,35 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
               >
                 {description}
               </Typography>
+              <Box
+                borderRadius={"100%"}
+                bgcolor={"#61a05f"}
+                padding={"8px 8px 6px 10px"}
+                color={"#0b260b"}
+                onClick={isMdUp ? () => window.open(link, "_blank") : null}
+                sx={{
+                  cursor: "pointer",
+                  zIndex: 4,
+                }}
+              >
+                <ArrowForwardIosIcon />
+              </Box>
             </motion.div>
           </Card>
         </motion.div>
       </motion.div>
     </Grid>
   );
-};
+}; 
 
 const Services = () => {
   return (
     <Box
-      sx={{ backgroundColor: "#00fff208", padding: { xs: "35px", md: "80px" } }}
+      sx={{ backgroundColor: "#305041",
+        padding: { xs: "35px 10px 45px 10px", md: "50px" },
+       }}
     >
-      <Typography variant="H38px" align="center" color="textPrimary">
+      <Typography variant="H38px" align="center" color="textThird">
         My Practices
       </Typography>
       <Grid

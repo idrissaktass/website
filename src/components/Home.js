@@ -4,8 +4,6 @@ import HeroSection from './HeroSection';
 import Navbar from './Navbar';
 import Services from './Services';
 import WorkExperience from './WorkExperience';
-import ContactMe from "./ContactMe";
-import Footer from "./Footer";
 
 function Home() {
   return (
@@ -23,10 +21,6 @@ function Home() {
       <div id="experience">
         <WorkExperience />
       </div>
-      <div id="contact">
-        <ContactMe />
-      </div>
-      <Footer/>
     </Grid>
   );
 }

@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#00fff208", boxShadow: "none", paddingTop: 1.5 }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "#f7f8f8", boxShadow: "none", paddingBlock: 1 }}>
       <Toolbar sx={{ justifyContent: { xs: "space-between", sm: "space-around" } }}>
         <Typography
           variant="h6"
@@ -43,7 +43,6 @@ const Navbar = () => {
             { label: "Home", id: "hero" },
             { label: "About", id: "about" },
             { label: "Portfolio", id: "services" },
-            { label: "Contact", id: "contact" },
           ].map((item) => (
             <Typography
               key={item.id}
@@ -56,7 +55,7 @@ const Navbar = () => {
             </Typography>
           ))}
         </Box>
-        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+        <Box sx={{ display: { xs: "none"} }}>
         <Button
           variant="contained"
           sx={{
@@ -118,7 +117,6 @@ const Navbar = () => {
                 { label: "Home", id: "hero" },
                 { label: "About", id: "about" },
                 { label: "Portfolio", id: "services" },
-                { label: "Contact", id: "contact" },
               ].map((item) => (
                 <ListItem button key={item.id} onClick={() => scrollToSection(item.id)}>
                   <ListItemText primary={item.label} />

@@ -13,7 +13,7 @@ const TextContent = () => {
       animate={isTextInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 1 }}
     >
-      <Box sx={{ maxWidth: "600px", textAlign: { xs: "center", md: "left" } }}>
+      <Box border={"2px solid #305041"} bgcolor={"#ffffff7d"} p={3} sx={{ maxWidth: "600px", textAlign: { xs: "center", md: "left" } }}>
         <Typography variant="H48px" mb={2} color="textPrimary">
           I'm Frontend Developer
           <br />
@@ -28,49 +28,29 @@ const TextContent = () => {
   );
 };
 
-const ImageContent = () => {
-  const imageRef = useRef(null);
-  const isImageInView = useInView(imageRef, { once: true });
-
-  return (
-    <motion.div
-      ref={imageRef}
-      initial={{ opacity: 0.3, y: 90 }}
-      animate={isImageInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 1 }}
-    >
-        <Box
-          component="img"
-          src="/renovation.png"
-          sx={{
-            display:"flex",
-            justifySelf:{xs:"center", md:"unset"},
-            objectFit: "cover",
-            width: {xs:"120%", sm:"70%", md:"400px", lg:"500px"},
-            height: "100%",
-            maxHeight: "100%",
-            borderRadius: "10px",
-          }}
-        />
-    </motion.div>
-  );
-};
-
 const HeroSection = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: { xs: "column", md: "row" },
-        alignItems: "center",
-        justifyContent: "space-evenly",
-        gap: { xs: 5, md: 0 },
-        backgroundColor: "#00fff208",
-        padding: { xs: "60px 35px 60px 35px", md: "100px 50px 100px 50px" },
-      }}
-    >
+    <Box sx={{ position: 'relative', display: 'flex', flexDirection: { xs: "column", md: "row" }, alignItems: "center",
+      justifyContent: "space-evenly",
+      gap: { xs: 5, md: 0 }, 
+      padding: { xs: "200px 35px 120px 35px", md: "250px 50px 200px 50px" },
+     }}>
+      <Box sx={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundImage: "url('/about.jpg')",
+        backgroundSize: { xs: "250%", sm: "200%", md: "110%", lg: "78%" },
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        opacity: 0.7,
+        filter: "blur(5px)",
+        zIndex: -1,
+      }} />
+      
       <TextContent />
-      <ImageContent />
     </Box>
   );
 };

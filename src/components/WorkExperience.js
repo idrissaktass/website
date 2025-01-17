@@ -23,9 +23,9 @@ const TimelineItemWithAnimation = ({ item, icon, isLast }) => {
       },
     }}>
       <TimelineSeparator>
-        <TimelineDot color="primary" sx={{ padding: "8px" }}>
-          {icon}
-        </TimelineDot>
+      <TimelineDot sx={{ backgroundColor: "#305041", padding: "8px" }}>
+        {icon}
+      </TimelineDot>
         {!isLast && <TimelineConnector />}
       </TimelineSeparator>
       <TimelineContent>
@@ -69,9 +69,9 @@ const WorkExperience = () => {
           ),
         },        
         {
-          title: 'Full Stack Intern',
+          title: 'Full Stack Developer Intern',
           company: 'PokaMind',
-          period: '10.2023 - 12.2023',
+          period: '10.2023 - 01.2024',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
               <li>• Developing and improving web application using React, Next.js and Typescript.</li>
@@ -109,80 +109,89 @@ const WorkExperience = () => {
   ];
 
   return (
-    <Box sx={{ padding: { xs: "35px", md: "50px", backgroundColor: "#00fff212" } }}>
-      <Typography variant="H38px" align="center" color="textPrimary">
-        Experience
-      </Typography>
-      <Typography variant="body1" color="textSecondary" sx={{ marginBottom: 2 }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </Typography>
-      <Grid mb={4}
-        justifySelf={"center"}
-        sx={{
-          backgroundColor: "#61a05f",
-          width: "120px",
-          height: "2px",
-          position: "relative",
-          overflow: "hidden",
-          "::before": {
-            content: '""',
-            position: "absolute",
-            top: 0,
-            left: "-120px",
+    <Box sx={{ 
+      backgroundColor: "#3050410a",
+      display: "flex",
+      justifyContent: "center",
+      position: "relative",
+      padding: { xs: "35px", md: "50px" }
+    }}>
+      <Box
+      >
+        <Typography variant="H38px" align="center" color="textPrimary">
+          Experience
+        </Typography>
+        <Typography variant="body1" color="textSecondary" sx={{ marginBottom: 2 }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </Typography>
+        <Grid mb={4}
+          justifySelf={"center"}
+          sx={{
+            backgroundColor: "#305041",
             width: "120px",
             height: "2px",
-            background: "linear-gradient(to right, transparent, #fff, transparent)",
-            animation: "moveLight 2.5s infinite",
-          },
-        }}
-      >
-        <style>
-          {`
-          @keyframes moveLight {
-            0% {
-              left: -120px;
+            position: "relative",
+            overflow: "hidden",
+            "::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: "-120px",
+              width: "120px",
+              height: "2px",
+              background: "linear-gradient(to right, transparent, #fff, transparent)",
+              animation: "moveLight 2.5s infinite",
+            },
+          }}
+        >
+          <style>
+            {`
+            @keyframes moveLight {
+              0% {
+                left: -120px;
+              }
+              100% {
+                left: 120px;
+              }
             }
-            100% {
-              left: 120px;
-            }
-          }
-          `}
-        </style>
-      </Grid>
-      {experiences.map((section, index) => (
-        <Box key={index} mb={4}>
-          <Typography fontWeight={900} fontSize={"20px"}
-            color='textSecondary'
-            bgcolor={"#61a05f"}
-            borderRadius={"5px"}
-            width={"fit-content"}
-            justifySelf={"center"}
-            padding={1}
-          >
-            {section.category}
-          </Typography>
-          <Timeline
-            position={isSmallScreen ? "unset" : "alternate"}
-            sx={{
-              "&::before": {
-                content: '""',
-                width: isSmallScreen ? "0px" : "unset",
-                position: isSmallScreen ? "absolute" : "unset",
-                left: isSmallScreen ? "calc(50% - 1px)" : "unset",
-              },
-            }}
-          >
-            {section.items.map((item, i) => (
-              <TimelineItemWithAnimation
-                key={i}
-                item={item}
-                icon={section.category === 'WORK EXPERIENCE' ? <HomeRepairServiceIcon /> : <SchoolIcon />}
-                isLast={i === section.items.length - 1}
-              />
-            ))}
-          </Timeline>
-        </Box>
-      ))}
+            `}
+          </style>
+        </Grid>
+        {experiences.map((section, index) => (
+          <Box key={index} mb={4}>
+            <Typography fontWeight={900} fontSize={"20px"}
+              color='textThird'
+              bgcolor={"#305041"}
+              borderRadius={"5px"}
+              width={"fit-content"}
+              justifySelf={"center"}
+              padding={1}
+            >
+              {section.category}
+            </Typography>
+            <Timeline
+              position={isSmallScreen ? "unset" : "alternate"}
+              sx={{
+                "&::before": {
+                  content: '""',
+                  width: isSmallScreen ? "0px" : "unset",
+                  position: isSmallScreen ? "absolute" : "unset",
+                  left: isSmallScreen ? "calc(50% - 1px)" : "unset",
+                },
+              }}
+            >
+              {section.items.map((item, i) => (
+                <TimelineItemWithAnimation
+                  key={i}
+                  item={item}
+                  icon={section.category === 'WORK EXPERIENCE' ? <HomeRepairServiceIcon /> : <SchoolIcon />}
+                  isLast={i === section.items.length - 1}
+                />
+              ))}
+            </Timeline>
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 };
