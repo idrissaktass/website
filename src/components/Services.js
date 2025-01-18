@@ -149,7 +149,7 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
                 bgcolor={"#61a05f"}
                 padding={"8px 8px 6px 10px"}
                 color={"#0b260b"}
-                onClick={isMdUp ? () => window.open(link, "_blank") : null}
+                onClick={!isMdUp ? () => window.open(link, "_blank") : null}
                 sx={{
                   cursor: "pointer",
                   zIndex: 4,
