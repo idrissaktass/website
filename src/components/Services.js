@@ -7,7 +7,7 @@ import { motion, useInView, useAnimation } from "framer-motion";
 
 const servicesData = [
   {
-    title: "Lost and Found App",
+    title: "Lost and Found",
     description:
       "Developed a full-stack lost and found web application to help users post, search, and find lost items or pets.",
     icon: <LaptopOutlinedIcon />,
