@@ -7,7 +7,7 @@ import { motion, useInView, useAnimation } from "framer-motion";
 
 const servicesData = [
   {
-    title: "Lost and Found App",
+    title: "Lost and Found",
     description:
       "Developed a full-stack lost and found web application to help users post, search, and find lost items or pets.",
     icon: <LaptopOutlinedIcon />,
@@ -36,6 +36,21 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
   const controls = useAnimation();
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const [opened, setOpened] = useState(false);
+  
+  const toggleCard = () => {
+    if (isMdUp) {
+      window.open(link, "_blank");
+    }
+  };
+
+  const handleCardClick = (e) => {
+    if (!isMdUp) {
+      setOpened(!opened);
+    } else {
+      toggleCard();
+    }
+  };
 
   useEffect(() => {
     const startAnimation = async () => {
@@ -156,7 +171,7 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
                 bgcolor={"#61a05f"}
                 padding={"8px 8px 6px 10px"}
                 color={"#0b260b"}
-                onClick={isMdUp ? () => window.open(link, "_blank") : null}
+                onClick={handleCardClick}
                 sx={{
                   cursor: "pointer",
                   zIndex: 4,

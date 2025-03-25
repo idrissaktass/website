@@ -56,7 +56,7 @@ const Navbar = () => {
           ))}
         </Box>
         <Box sx={{ display: { xs: "none"} }}>
-        <Button
+        <Button onClick={() => (window.location.href = "mailto:idrissaktass98@gmail.com")}
           variant="contained"
           sx={{
             position: "relative",
@@ -78,9 +78,8 @@ const Navbar = () => {
               animation: "lightBorder 3.5s infinite",
             },
           }}
-          onClick={() => scrollToSection('contact')} // Navigate to Contact section
         >
-          <Typography>Hire Me</Typography>
+          <Typography >Hire Me</Typography>
           <style>
             {`
               @keyframes lightBorder {

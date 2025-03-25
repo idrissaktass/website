@@ -121,7 +121,7 @@ const WorkExperience = () => {
         <Typography variant="H38px" align="center" color="textPrimary">
           Experience
         </Typography>
-        <Grid mb={4}
+        <Grid mb={4} mt={1}
           justifySelf={"center"}
           sx={{
             backgroundColor: "#305041",
