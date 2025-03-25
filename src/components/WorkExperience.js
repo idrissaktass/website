@@ -121,9 +121,6 @@ const WorkExperience = () => {
         <Typography variant="H38px" align="center" color="textPrimary">
           Experience
         </Typography>
-        <Typography variant="body1" color="textSecondary" sx={{ marginBottom: 2 }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </Typography>
         <Grid mb={4}
           justifySelf={"center"}
           sx={{
