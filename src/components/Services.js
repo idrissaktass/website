@@ -103,7 +103,7 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
                 zIndex: 1,
               }}
             />
-            <CardContent
+            <CardContent onClick={isMdUp ? () => window.open(link, "_blank") : null}
               sx={{
                 height: "10px",
                 mt: hovered ? 2 : 0,
