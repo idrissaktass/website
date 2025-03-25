@@ -7,11 +7,18 @@ import { motion, useInView, useAnimation } from "framer-motion";
 
 const servicesData = [
   {
-    title: "Lost and Found",
+    title: "Lost and Found App",
     description:
       "Developed a full-stack lost and found web application to help users post, search, and find lost items or pets.",
     icon: <LaptopOutlinedIcon />,
     link: "https://www.lostandfoundtr.online/",
+  },
+  {
+    title: "Diary AI",
+    description:
+      "A personalized AI-powered app that analyzes users' daily experiences and emotional states, providing detailed reports and weekly insights to help improve well-being.",
+    icon: <LaptopOutlinedIcon />,
+    link: "https://diary-ai-0.vercel.app/",
   },
   {
     title: "Movie App",
@@ -50,7 +57,7 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
   }, [controls, hovered, index]);
 
   return (
-    <Grid item size={{ xs: 12, sm: 8, md: 5, lg: 4.1, xl: 3 }} ref={cardRef}
+    <Grid item size={{ xs: 12, sm: 8, md: 5, lg: 3, xl: 3 }} ref={cardRef}
     sx={{
       cursor: isMdUp ? 'pointer' : 'default',
     }}
@@ -149,7 +156,7 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
                 bgcolor={"#61a05f"}
                 padding={"8px 8px 6px 10px"}
                 color={"#0b260b"}
-                onClick={!isMdUp ? () => window.open(link, "_blank") : null}
+                onClick={isMdUp ? () => window.open(link, "_blank") : null}
                 sx={{
                   cursor: "pointer",
                   zIndex: 4,
@@ -169,7 +176,7 @@ const Services = () => {
   return (
     <Box
       sx={{ backgroundColor: "#305041",
-        padding: { xs: "35px 10px 45px 10px", md: "50px" },
+        padding: { xs: "35px 10px 45px 10px", md: "50px", lg:"50px 10px 50px 10px" },
        }}
     >
       <Typography variant="H38px" align="center" color="textThird">
@@ -210,7 +217,7 @@ const Services = () => {
           `}
         </style>
       </Grid>
-      <Grid container gap={8} justifyContent="center">
+      <Grid container gap={3} justifyContent="center">
         {servicesData.map((service, index) => (
           <ServiceCard
             key={index}
