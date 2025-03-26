@@ -123,7 +123,7 @@ const Navbar = () => {
               ))}
             </List>
             <Box textAlign="center" mt={2}>
-              <Button
+              <Button onClick={() => (window.location.href = "mailto:idrissaktass98@gmail.com")}
                 variant="contained"
                 sx={{
                   backgroundColor: "#61a05f",
