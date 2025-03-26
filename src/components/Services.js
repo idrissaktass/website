@@ -39,14 +39,18 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
   const [opened, setOpened] = useState(false);
   
   const toggleCard = () => {
+    console.log("toggle")
     if (isMdUp) {
       window.open(link, "_blank");
+      console.log("toggleif")
+
     }
   };
 
   const handleCardClick = (e) => {
     if (!isMdUp) {
       setOpened(!opened);
+      console.log("cardclick")
     } else {
       toggleCard();
     }
