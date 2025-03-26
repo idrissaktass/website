@@ -38,23 +38,19 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
   const [opened, setOpened] = useState(false);
   
-  const toggleCard = () => {
-    console.log("toggle")
-    if (isMdUp) {
-      window.open(link, "_blank");
-      console.log("toggleif")
-
-    }
+  const handleCardClick = () => {
+    window.open(link, "_blank");
+    console.log("toggleif")
   };
 
-  const handleCardClick = (e) => {
-    if (!isMdUp) {
-      setOpened(!opened);
-      console.log("cardclick")
-    } else {
-      toggleCard();
-    }
-  };
+  // const handleCardClick = (e) => {
+  //   if (!isMdUp) {
+  //     setOpened(!opened);
+  //     console.log("cardclick")
+  //   } else {
+  //     toggleCard();
+  //   }
+  // };
 
   useEffect(() => {
     const startAnimation = async () => {
