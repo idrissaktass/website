@@ -18,7 +18,7 @@ const servicesData = [
     description:
       "A personalized AI-powered app that analyzes users' daily experiences and emotional states, providing detailed reports and weekly insights to help improve well-being.",
     icon: <LaptopOutlinedIcon />,
-    link: "https://diary-ai-0.vercel.app/",
+    link: "https://aidiary.online/",
   },
   {
     title: "Movie App",
