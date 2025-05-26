@@ -60,7 +60,7 @@ const WorkExperience = () => {
           period: '01.2024 - 10.2024',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
-              <li>• Developing and improving web application using React and Typescript.</li>
+              <li>• Developing and improving web application using React, Next.js and Python.</li>
               <li>• Backend development with Python when needed.</li>
               <li>• Integrating new designs from Figma to application by collaborating with designers.</li>
               <li>• Integrating the design into the application using Material UI.</li>
