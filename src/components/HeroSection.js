@@ -21,7 +21,7 @@ const TextContent = () => {
         </Typography>
 
         <Typography color="textSecondary" mt={2}>
-          Turning ideas into impactful web experiences with React and the MERN Stack. Let's build something amazing together!
+          Turning ideas into impactful web experiences with React, Next.js and the MERN Stack. Let's build something amazing together!
         </Typography>
       </Box>
     </motion.div>
