@@ -27,6 +27,13 @@ const servicesData = [
     icon: <LaptopOutlinedIcon />,
     link: "https://www.cinescope.online/",
   },
+    {
+    title: "Weather App",
+    description:
+      "A simple and user-friendly weather app that provides real-time and 7-day forecasts with detailed city-based information.",
+    icon: <LaptopOutlinedIcon />,
+    link: "http://weather-pi-sand-22.vercel.app/",
+  },
 ];
 
 const ServiceCard = ({ title, description, icon, link, index }) => {
@@ -72,7 +79,7 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
   }, [controls, hovered, index]);
 
   return (
-    <Grid item size={{ xs: 12, sm: 8, md: 5, lg: 3, xl: 3 }} ref={cardRef}
+    <Grid item size={{ xs: 12, sm: 8, md: 5, lg: 2.6, xl: 2.6 }} ref={cardRef}
     sx={{
       cursor: isMdUp ? 'pointer' : 'default',
     }}
