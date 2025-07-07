@@ -79,7 +79,7 @@ const ServiceCard = ({ title, description, icon, link, index }) => {
   }, [controls, hovered, index]);
 
   return (
-    <Grid item size={{ xs: 12, sm: 8, md: 5, lg: 3, xl: 3 }} ref={cardRef}
+    <Grid item size={{ xs: 12, sm: 8, md: 5, lg: 2.6, xl: 2.6 }} ref={cardRef}
     sx={{
       cursor: isMdUp ? 'pointer' : 'default',
     }}
