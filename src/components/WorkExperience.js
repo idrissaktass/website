@@ -79,6 +79,16 @@ const WorkExperience = () => {
             </ul>
           ),
         },
+        {
+          title: 'Full Stack Developer Intern',
+          company: 'OSF Digital',
+          period: '06.2022 - 09.2022',
+          description: (
+            <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
+              <li>• Developing and improving web applications using HTML, CSS, Javascript and Node.js technologies.</li>
+            </ul>
+          ),
+        },
       ],
     },
     {
