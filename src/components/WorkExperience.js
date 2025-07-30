@@ -56,7 +56,7 @@ const WorkExperience = () => {
       items: [
         {
           title: 'Frontend Developer',
-          company: 'PokaMind',
+          company: 'PokaMind / Remote - Stockholm',
           period: '11.2023 - 04.2025',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
@@ -70,7 +70,7 @@ const WorkExperience = () => {
         },        
         {
           title: 'Full Stack Developer Intern',
-          company: 'PokaMind',
+          company: 'PokaMind / Remote - Stockholm',
           period: '08.2023 - 11.2023',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
@@ -81,7 +81,7 @@ const WorkExperience = () => {
         },
         {
           title: 'Full Stack Developer Intern',
-          company: 'OSF Digital',
+          company: 'OSF Digital / Remote - İzmir',
           period: '06.2022 - 09.2022',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
