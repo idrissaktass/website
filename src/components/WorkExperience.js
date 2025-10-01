@@ -74,7 +74,7 @@ const WorkExperience = () => {
           period: '11.2023 - 02.2024',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
-              <li>• Developing and improving web application using React, Next.js and Typescript.</li>
+              <li>• Developing and improving web application using React and Next.js.</li>
               <li>• Integrating the design into the application using Bootstrap.</li>
             </ul>
           ),
