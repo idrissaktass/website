@@ -11,7 +11,7 @@ const servicesData = [
     description:
       "Developed a full-stack lost and found web application to help users post, search, and find lost items or pets.",
     icon: <LaptopOutlinedIcon />,
-    link: "https://www.lostandfoundtr.online/",
+    link: "https://www.lostandfound.website/",
   },
   {
     title: "Diary AI",
@@ -25,7 +25,7 @@ const servicesData = [
     description:
       "A movie application that allows users to find movies, enhancing their experience with personalized suggestions.",
     icon: <LaptopOutlinedIcon />,
-    link: "https://www.cinescope.online/",
+    link: "https://www.cinescope.live/",
   },
     {
     title: "Weather App",
