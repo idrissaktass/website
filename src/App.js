@@ -7,7 +7,7 @@ import theme from "./theme";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}> 
       <div className="App">
         <Home/>
       </div> 
