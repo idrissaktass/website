@@ -26,7 +26,7 @@ const TextSection = () => {
             marginTop: 2,
           }}
         >
-          Hi there! 👋 I'm a Web Developer with a Computer Engineering degree from Çukurova University. Specializing in React, Next.js and the MERN Stack, I enjoy building user-friendly, visually appealing web applications using tools like Material UI and Bootstrap.
+          Hi there! 👋 I'm a Web Developer with a Computer Engineering degree from Çukurova University. Specializing in React, React Native, TypeScript, Next.js and the MERN Stack, I enjoy building user-friendly, visually appealing web applications using tools like Material UI and Bootstrap.
           <br />I have nearly two years of experience as a Frontend Developer at PokaMind. Also developed some projects to improve my skills ranging from movie suggestion apps to platforms connecting people with lost belongings. I’m passionate about turning ideas into functional, meaningful projects and continuously improving my skills.
           <br />Thank you for visiting my website, explore my projects and let’s connect for collaboration!
         </Typography>
