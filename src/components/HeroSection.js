@@ -15,13 +15,13 @@ const TextContent = () => {
     >
       <Box border={"2px solid #305041"} bgcolor={"#ffffff7d"} p={3} sx={{ maxWidth: "600px", textAlign: { xs: "center", md: "left" } }}>
         <Typography variant="H48px" mb={2} color="textPrimary">
-          I'm Frontend Developer
+          I'm Full Stack Developer
           <br />
           İdris Aktaş
         </Typography>
 
         <Typography color="textSecondary" mt={2}>
-          Turning ideas into impactful web experiences with React, Next.js and the MERN Stack. Let's build something amazing together!
+          Turning ideas into impactful web/mobile experiences with React, React Native, TypeScript and the MERN Stack. Let's build something amazing together!
         </Typography>
       </Box>
     </motion.div>
