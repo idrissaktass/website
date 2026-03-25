@@ -15,7 +15,7 @@ const TextContent = () => {
     >
       <Box border={"2px solid #305041"} bgcolor={"#ffffff7d"} p={3} sx={{ maxWidth: "600px", textAlign: { xs: "center", md: "left" } }}>
         <Typography variant="H48px" mb={2} color="textPrimary">
-          I'm Full Stack Developer
+          I'm Front-End Developer
           <br />
           İdris Aktaş
         </Typography>
