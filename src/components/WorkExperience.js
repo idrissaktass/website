@@ -57,7 +57,7 @@ const WorkExperience = () => {
         {
           title: 'Frontend Developer',
           company: 'PokaMind / Remote - Stockholm',
-          period: '02.2024 - 02.2025',
+          period: '03.2024 - 05.2025',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
               <li>• Developing and improving web application using React, Next.js and Python.</li>
