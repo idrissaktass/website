@@ -27,6 +27,13 @@ const servicesData = [
     icon: <LaptopOutlinedIcon />,
     link: "https://www.lostandfound.website/",
   },
+    {
+    title: "Dashboard",
+    description:
+      "Developed a professional inventory dashboard featuring real-time stock tracking, automated alerts, and advanced data visualizations for optimized supply chain management.",
+    icon: <LaptopOutlinedIcon />,
+    link: "https://smart-dashboard-opal.vercel.app/",
+  },
   {
     title: "Diary AI",
     description:
