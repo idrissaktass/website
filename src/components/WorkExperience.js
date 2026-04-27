@@ -57,7 +57,7 @@ const WorkExperience = () => {
         {
           title: 'Frontend Developer',
           company: 'PokaMind / Remote - Stockholm',
-          period: '03.2024 - 05.2025',
+          period: '05.2024 - 11.2025',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
               <li>• Developing and improving web application using React, Next.js and Python.</li>
@@ -68,17 +68,6 @@ const WorkExperience = () => {
             </ul>
           ),
         },        
-        {
-          title: 'Full Stack Developer Intern',
-          company: 'PokaMind / Remote - Stockholm',
-          period: '11.2023 - 02.2024',
-          description: (
-            <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
-              <li>• Developing and improving web application using React and Next.js.</li>
-              <li>• Integrating the design into the application using Bootstrap.</li>
-            </ul>
-          ),
-        },
         {
           title: 'Full Stack Developer Intern',
           company: 'OSF Digital / Remote - İzmir',
