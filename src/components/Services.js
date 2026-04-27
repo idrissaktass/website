@@ -7,14 +7,14 @@ import { motion, useInView, useAnimation } from "framer-motion";
 
 const servicesData = [
     {
-    title: "ChefAI: AI Recipes & Meal Plan",
+    title: "ChefAI",
     description:
       "Developed a full-stack AI-powered cooking assistant that suggests recipes, meal plans, and smart ingredient-based recommendations using modern web technologies.",
     icon: <LaptopOutlinedIcon />,
     link: "https://play.google.com/store/apps/details?id=com.idrisaktas.chefai&pcampaignid=web_share",
   },
     {
-    title: "Moodflix: AI Movie Finder",
+    title: "Moodflix AI",
     description:
       "Built an AI-powered movie discovery app that provides personalized recommendations, real-time movie data, and social features.",
     icon: <LaptopOutlinedIcon />,
