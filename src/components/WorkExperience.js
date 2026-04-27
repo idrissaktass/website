@@ -55,6 +55,17 @@ const WorkExperience = () => {
       category: 'WORK EXPERIENCE',
       items: [
         {
+          title: 'Frontend & Full Stack Developer',
+          company: 'Self-Development',
+          period: '12.2025 - current',
+          description: (
+            <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
+              <li>• Dedicated time to improving my skills in frontend and backend development.</li>
+              <li>• Built and deployed multiple personal projects using modern web technologies (React, React Native, Node.js, Express, MongoDB, etc.), focusing on real-world usability and production-ready applications.</li>
+            </ul>
+          ),
+        }, 
+        {
           title: 'Frontend Developer',
           company: 'PokaMind / Remote - Stockholm',
           period: '05.2024 - 11.2025',
