@@ -39,7 +39,7 @@ const servicesData = [
     description:
       "A personalized AI-powered app that analyzes users' daily experiences and emotional states, providing detailed reports and weekly insights to help improve well-being.",
     icon: <LaptopOutlinedIcon />,
-    link: "https://aidiary.online/",
+    link: "https://ai-diary-zeta.vercel.app/",
   },
   {
     title: "Movie App",
