@@ -55,13 +55,13 @@ description:
 icon: <LaptopOutlinedIcon />,
 link: "https://www.cinescope.live/",
 },
-{
-title: "Weather App",
-description:
-"A simple weather app that provides real-time and 7-day forecasts.",
-icon: <LaptopOutlinedIcon />,
-link: "http://weather-pi-sand-22.vercel.app/",
-},
+// {
+// title: "Weather App",
+// description:
+// "A simple weather app that provides real-time and 7-day forecasts.",
+// icon: <LaptopOutlinedIcon />,
+// link: "http://weather-pi-sand-22.vercel.app/",
+// },
 ];
 
 const ServiceCard = ({ title, description, icon, link, index, activeIndex }) => {
