@@ -14,6 +14,13 @@ icon: <LaptopOutlinedIcon />,
 link: "https://play.google.com/store/apps/details?id=com.idrisaktas.chefai&pcampaignid=web_share",
 },
 {
+title: "StellarLab (NASA App)",
+description:
+"An advanced space exploration platform featuring a 10-year orbital archive of Earth, real-time Mars Rover telemetry, and a deep-space solar activity monitor using official NASA APIs.",
+icon: <LaptopOutlinedIcon />,
+link: "https://nasa-app-client-u3n8.onrender.com/",
+},
+{
 title: "Moodflix AI",
 description:
 "Built an AI-powered movie discovery app that provides personalized recommendations, real-time movie data, and social features.",
