@@ -57,7 +57,7 @@ const WorkExperience = () => {
         {
           title: 'Frontend & Full Stack Developer',
           company: 'Self-Development',
-          period: '12.2025 - current',
+          period: '06.2025 - current',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
               <li>• Dedicated time to improving my skills in frontend and backend development.</li>
@@ -68,7 +68,7 @@ const WorkExperience = () => {
         {
           title: 'Frontend Developer',
           company: 'PokaMind / Remote - Stockholm',
-          period: '05.2024 - 11.2025',
+          period: '02.2024 - 05.2025',
           description: (
             <ul style={{listStyleType:"none", paddingLeft:"10px"}}>
               <li>• Developing and improving web application using React, Next.js and Python.</li>
